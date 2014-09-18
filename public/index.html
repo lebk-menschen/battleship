@@ -3,6 +3,8 @@
 	<head>
 		<link rel="stylesheet" href="/css/bootstrap.css">
 
+		<script src="/lib/underscore.js"></script>
+
 		<script src="/lib/angular.js"></script>
 		<script src="/lib/angular-ui-router.js"></script>
 
@@ -12,13 +14,12 @@
 		<div class="navbar navbar-default">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li><a ui-sref="login">login</a></li>
-					<li><a ui-sref="start">start</a></li>
+					<li><a data-ui-sref="login">login</a></li>
+					<li><a data-ui-sref="start">start</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="container">
-			<div ui-view></div>
-		</div>
+
+		<div data-ui-view></div>
 	</body>
 </html>
