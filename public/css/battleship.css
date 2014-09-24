@@ -124,3 +124,55 @@ a img {
 :focus {
   outline: 0;
 }
+.paper-toolbar {
+  height: 256px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+}
+.paper-toolbar.color {
+  background-color: #009688;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 256px;
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 15px 6px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 15px 6px rgba(0, 0, 0, 0.22);
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transform: translate(-256px, 0px);
+  -moz-transform: translate(-256px, 0px);
+  -ms-transform: translate(-256px, 0px);
+  -o-transform: translate(-256px, 0px);
+  transform: translate(-256px, 0px);
+  -webkit-transform: translate3d(-256px, 0px, 0);
+  -moz-transform: translate3d(-256px, 0px, 0);
+  -o-transform: translate3d(-256px, 0px, 0);
+  -ms-transform: translate3d(-256px, 0px, 0);
+  transform: translate3d(-256px, 0px, 0);
+}
+.sidebar .sidebar-header {
+  height: 128px;
+  background-color: #b2dfdb;
+}
+.sidebar.open {
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0);
+  -moz-transform: translate3d(0px, 0px, 0);
+  -o-transform: translate3d(0px, 0px, 0);
+  -ms-transform: translate3d(0px, 0px, 0);
+  transform: translate3d(0px, 0px, 0);
+}
+body {
+  background-color: #f9f9f9;
+}
