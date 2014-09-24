@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lebk-menschen/battleship",
   "devDependencies": {
-    "gulp": "^3.8.7"
+    "gulp": "^3.8.8",
+    "gulp-less": "^1.3.6"
   }
 }
