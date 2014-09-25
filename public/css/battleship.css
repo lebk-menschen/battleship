@@ -124,6 +124,17 @@ a img {
 :focus {
   outline: 0;
 }
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 .paper-toolbar {
   position: fixed;
   left: 0;
@@ -170,15 +181,18 @@ a img {
   padding-left: 24px;
   padding-right: 24px;
 }
-.card .item.list-heading {
-  height: 56px;
+.card .item.card-header {
+  height: 64px;
   padding-top: 16px;
   color: rgba(0, 0, 0, 0.54);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.card .item.list-heading h2 {
+.card .item.card-header h2 {
   margin: 0;
-  line-height: 16px;
-  font-size: 13px;
+  line-height: 24px;
+  font-size: 16px;
 }
 .card .item.list-item {
   height: 88px;
@@ -236,6 +250,60 @@ a img {
   -o-transform: translate3d(0px, 0px, 0);
   -ms-transform: translate3d(0px, 0px, 0);
   transform: translate3d(0px, 0px, 0);
+}
+body {
+  position: relative;
+}
+.layer-system {
+  z-index: 2;
+}
+.layer-nav {
+  z-index: 1;
+}
+.field {
+  zoom: 1;
+}
+.field:before,
+.field:after {
+  content: "";
+  display: table;
+}
+.field:after {
+  clear: both;
+}
+.field .field-row {
+  zoom: 1;
+}
+.field .field-row:before,
+.field .field-row:after {
+  content: "";
+  display: table;
+}
+.field .field-row:after {
+  clear: both;
+}
+.field .field-column {
+  width: 48px;
+  display: block;
+  float: left;
+}
+.field .field-box {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  text-align: center;
+  line-height: 24px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.54);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.field .field-item.hit {
+  background-color: #ffff00;
+}
+.field .field-area {
+  float: left;
 }
 body {
   background-color: #f9f9f9;

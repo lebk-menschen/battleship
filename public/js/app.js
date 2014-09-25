@@ -27,7 +27,8 @@ angular.module('battleship', ['ui.router'])
           })
           .state('user.match', {
             url: '/match/:matchId',
-            templateUrl: '/tpl/views/match.html'
+            templateUrl: '/tpl/views/match.html',
+            controller: 'MatchCtrl'
           });
     }
   ])
@@ -67,11 +68,6 @@ angular.module('battleship', ['ui.router'])
       $scope.matches = matches;
     }
   ])
-  .controller('MatchCtrl', ['$scope',
-    function ($scope) {
-
-    }
-  ])
 
   // Services
   .service('MatchList', ['$q',
@@ -92,6 +88,71 @@ angular.module('battleship', ['ui.router'])
           console.log(data);
         });
 
+
     }
   ])
+
   ;
+angular.module('battleship')
+  .controller('MatchCtrl', ['$scope',
+    function ($scope) {
+
+      $scope.game = {
+        fields: {
+          player: {},
+          opponent: {}
+        }
+      };
+
+      $scope.columns = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+      $scope.rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+
+      var getField = function () {
+        var space = {
+          isShip: false,
+          isHit: false
+        };
+
+        var field = _.object(_.map($scope.rows, function (row) {
+          var columns = _.object(_.map($scope.columns, function (column) {
+            var copy = _.clone(space);
+
+            copy.row = row;
+            copy.col = column;
+
+            return [column, copy];
+          }));
+
+          return [row, columns];
+        }));
+
+        return field;
+      };
+
+      var init = function () {
+        $scope.game.fields.player = getField();
+        $scope.game.fields.opponent = getField();
+      };
+
+      init();
+    }
+  ]);
+angular.module('battleship')
+  .directive('field', function () {
+    return {
+      restrict: 'EA',
+      replace: true,
+      templateUrl: '/tpl/partials/field.html'
+    };
+  });
+angular.module('battleship')
+  .directive('fieldItem', function () {
+    return {
+      restrict: 'EA',
+      replace: true,
+      templateUrl: '/tpl/partials/fieldItem.html',
+      scope: {
+        field: '=fieldData'
+      }
+    };
+  });

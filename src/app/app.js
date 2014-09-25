@@ -27,7 +27,8 @@ angular.module('battleship', ['ui.router'])
           })
           .state('user.match', {
             url: '/match/:matchId',
-            templateUrl: '/tpl/views/match.html'
+            templateUrl: '/tpl/views/match.html',
+            controller: 'MatchCtrl'
           });
     }
   ])
@@ -67,11 +68,6 @@ angular.module('battleship', ['ui.router'])
       $scope.matches = matches;
     }
   ])
-  .controller('MatchCtrl', ['$scope',
-    function ($scope) {
-
-    }
-  ])
 
   // Services
   .service('MatchList', ['$q',
@@ -92,6 +88,8 @@ angular.module('battleship', ['ui.router'])
           console.log(data);
         });
 
+
     }
   ])
+
   ;
